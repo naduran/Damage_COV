@@ -1,0 +1,51 @@
+Cambios hechos en el código:
+
+	En todos:
+
+		#Cambios de directorio
+		import os
+
+		os.chdir("..")
+		path = os.path.abspath(os.getcwd())
+	
+	En preprocessing signos: 
+		#Incluir pacientes
+		# Se omitió la columna 0 en el drop
+		sv2 = sv2.drop(sv2.columns[[3]], axis = 1)
+		#Se agregó Paciente
+		sv2 = sv2[['Paciente','FC', 'TA SISTOLICA', 'TA DIASTOLICA', 'TAM', 'TEMP', 'OXI', 'FR','Ventilacion',]]
+
+	En autoML:
+		#Se descomentó, agrego
+		h2o.cluster().shutdown() #Con sus respectivos init
+		#Se corrigió definición de rangos en Modelo 1 y Modelo 5
+
+		#Cambios de directorio
+		import os
+
+		os.chdir("..")
+		path = os.path.abspath(os.getcwd())
+
+
+
+
+Revisar:
+
+	En signos_preprocessing se está utilizando la siguiente fórmula para calcular TAM:
+	sv2["TAM"] = (sv2["TA SISTOLICA"] + (2 * sv2["TA DIASTOLICA"]) ) / 3
+	Sin embargo, hay una TAM en los registros y estos dos datos aveces no concuerdan.
+
+	En los modelos de signos y paraclinicos se ignora el paciente. Es decir, si un paciente tiene 8 datos de signos entonces estos 8 datos los lee como si fuera cada uno de un paciente.
+	
+	Confirmar si los paciente con_1 o _2 en excel SV efectivamente aparecen.
+
+Temas a tratar en reunión:
+
+	Compartir BD con Julieta (Trabajo con Uniandes)
+	Procesamiento de otros en Sintomas y comorbilidades
+	Adaptar preprocessing Signos Vitales para recibir diferentes ingresos
+
+
+
+
+

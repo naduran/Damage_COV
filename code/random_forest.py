@@ -68,9 +68,11 @@ from tabulate import tabulate
 h2o.init(nthreads = -1, max_mem_size = 8)
 h2o.connect()
 # shutdown per every trained model
-#h2o.cluster().shutdown() 
 
-path = "C:\\Users\\User\\Desktop\\Modelo UniAndes"
+import os
+
+os.chdir("..")
+path = os.path.abspath(os.getcwd())
 
 # read data
 df = pd.read_excel(path + '\\output\\demo_clean.xlsx')
@@ -83,7 +85,7 @@ df = df.replace(cleanup_col)
 
 # check types again
 df.dtypes
-
+h2o.cluster().shutdown()
 #------------------------------------------------------------------------------
 
 
@@ -93,6 +95,14 @@ df.dtypes
 #---------------------#
 # MODEL 1: SINTOMAS
 #---------------------#
+print("")
+print("****************")
+print("Modelo 1: Sintomas")
+print("****************")
+print("")
+
+h2o.init(nthreads = -1, max_mem_size = 8)
+h2o.connect()
 
 # create features list
 y = 'Ventilacion'
@@ -148,7 +158,8 @@ best_drf_model.varimp_plot()
 grid_rf_performance = best_drf_model.model_performance(test)
 print(grid_rf_performance)
 
-
+# shutdown per every trained model
+h2o.cluster().shutdown()
 #------------------------------------------------------------------------------
 
 # remove accent in columns
@@ -158,8 +169,15 @@ df = df.rename(columns={'Síndrome de Sjögren': 'Sindrome de Sjogren'})
 #---------------------#
 # MODEL 2: COMORBILIDADES
 #---------------------#
+print("")
+print("****************")
+print("Modelo 2: Comorbilidades")
+print("****************")
+print("")
 
 
+h2o.init(nthreads = -1, max_mem_size = 8)
+h2o.connect()
 # create features list
 y = 'Ventilacion'
 
@@ -217,7 +235,7 @@ print(grid_rf_performance)
 #------------------------------------------------------------------------------
 
 # shutdown per every trained model and connect again
-#h2o.cluster().shutdown()
+h2o.cluster().shutdown()
 h2o.init(nthreads = -1, max_mem_size = 8)
 h2o.connect()
 
@@ -230,7 +248,11 @@ df = df.rename(columns={'Síndrome de Sjögren': 'Sindrome de Sjogren'})
 #---------------------#
 # MODEL 3: SINTOMAS + COMORBILIDADES
 #---------------------#
-
+print("")
+print("****************")
+print("Modelo 3: Sintomas y Comorbilidades")
+print("****************")
+print("")
 # create features list
 y = 'Ventilacion'
 
@@ -294,7 +316,7 @@ print(grid_rf_performance)
 
 
 # shutdown per every trained model and connect again
-#h2o.cluster().shutdown()
+h2o.cluster().shutdown()
 h2o.init(nthreads = -1, max_mem_size = 8)
 h2o.connect()
 
@@ -302,7 +324,11 @@ h2o.connect()
 #---------------------#
 # MODEL 4: SIGNOS VITALES
 #---------------------#
-
+print("")
+print("****************")
+print("Modelo 4: Signos Vitales")
+print("****************")
+print("")
 
 # Read data
 sv2 = pd.read_excel(path + '\\output\\signos_vitales_clean.xlsx')
@@ -398,7 +424,7 @@ print(grid_rf_performance)
 
 
 # shutdown per every trained model and connect again
-#h2o.cluster().shutdown()
+h2o.cluster().shutdown()
 h2o.init(nthreads = -1, max_mem_size = 8)
 h2o.connect()
 
@@ -406,8 +432,11 @@ h2o.connect()
 #---------------------#
 # MODEL 5: PARACLINICOS
 #---------------------#
-
-
+print("")
+print("****************")
+print("Modelo 5: Paraclinicos")
+print("****************")
+print("")
 # Read data
 pc2sub = pd.read_excel(path + '\\output\\paraclinicos_clean.xlsx')
 

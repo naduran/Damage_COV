@@ -1,0 +1,778 @@
+Pueba RF 27-oct para Ventilación nivelada
+142 pacientes demo
+71 invas, 71 no invas
+
+C:\Users\Natalia\AppData\Local\Programs\Python\Python39\python.exe "D:/Documents/Natalia/Trabajo Andes 2021/Modelos/Repositorio con datos y código/code/random_forest.py"
+Checking whether there is an H2O instance running at http://localhost:54321 ..... not found.
+Attempting to start a local H2O server...
+; Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)
+  Starting server from C:\Users\Natalia\AppData\Local\Programs\Python\Python39\Lib\site-packages\h2o\backend\bin\h2o.jar
+  Ice root: C:\Users\Natalia\AppData\Local\Temp\tmpdwa12ugq
+  JVM stdout: C:\Users\Natalia\AppData\Local\Temp\tmpdwa12ugq\h2o_Natalia_started_from_python.out
+  JVM stderr: C:\Users\Natalia\AppData\Local\Temp\tmpdwa12ugq\h2o_Natalia_started_from_python.err
+  Server is running at http://127.0.0.1:54321
+Connecting to H2O server at http://127.0.0.1:54321 ... successful.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         05 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    19 days
+H2O_cluster_name:           H2O_from_python_Natalia_9miq5j
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    7.111 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://127.0.0.1:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+Connecting to H2O server at http://localhost:54321 ... successful.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         14 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    19 days
+H2O_cluster_name:           H2O_from_python_Natalia_9miq5j
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    7.097 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://localhost:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+
+****************
+Modelo 1: Sintomas
+****************
+
+Checking whether there is an H2O instance running at http://localhost:54321 ..... not found.
+Attempting to start a local H2O server...
+; Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)
+  Starting server from C:\Users\Natalia\AppData\Local\Programs\Python\Python39\Lib\site-packages\h2o\backend\bin\h2o.jar
+  Ice root: C:\Users\Natalia\AppData\Local\Temp\tmpk0qvadvy
+  JVM stdout: C:\Users\Natalia\AppData\Local\Temp\tmpk0qvadvy\h2o_Natalia_started_from_python.out
+  JVM stderr: C:\Users\Natalia\AppData\Local\Temp\tmpk0qvadvy\h2o_Natalia_started_from_python.err
+  Server is running at http://127.0.0.1:54321
+Connecting to H2O server at http://127.0.0.1:54321 ... successful.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         04 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    19 days
+H2O_cluster_name:           H2O_from_python_Natalia_vlq3tn
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    7.111 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://127.0.0.1:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+Connecting to H2O server at http://localhost:54321 ... successful.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         13 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    19 days
+H2O_cluster_name:           H2O_from_python_Natalia_vlq3tn
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    7.097 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://localhost:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+Parse progress: |████████████████████████████████████████████████████████████████| (done) 100%
+drf Grid Build progress: |███████████████████████████████████████████████████████| (done) 100%
+Model ID with best R2: rf_grid_model_8
+Best AUC: 0.639225181598063
+drf prediction progress: |███████████████████████████████████████████████████████| (done) 100%
++----+--------------------------------------------------+-----------------------+---------------------+--------------+
+|    | variable                                         |   relative importance |   scaled importance |   percentage |
+|----+--------------------------------------------------+-----------------------+---------------------+--------------|
+|  0 | Genero                                           |              28.7886  |            1        |    0.0928425 |
+|  1 | Dificultad respiratoria si disnea y si taquipnea |              24.7711  |            0.86045  |    0.0798864 |
+|  2 | Diarrea                                          |              21.7602  |            0.755863 |    0.0701762 |
+|  3 | Mialgia                                          |              19.7692  |            0.686704 |    0.0637553 |
+|  4 | Malestar General                                 |              19.6523  |            0.682641 |    0.0633781 |
+|  5 | Edad                                             |              18.4582  |            0.641166 |    0.0595274 |
+|  6 | Anosmia(Perdida del olfato )                     |              16.351   |            0.567969 |    0.0527317 |
+|  7 | Cefalea                                          |              15.2592  |            0.530045 |    0.0492107 |
+|  8 | otro sintoma                                     |              15.1476  |            0.526166 |    0.0488506 |
+|  9 | Dolor toracico                                   |              15.0455  |            0.522621 |    0.0485215 |
+| 10 | Escalofrios                                      |              14.5215  |            0.504419 |    0.0468315 |
+| 11 | Disnea                                           |              14.1883  |            0.492846 |    0.0457571 |
+| 12 | Fiebre                                           |              13.687   |            0.475432 |    0.0441403 |
+| 13 | Odinofagia                                       |              12.7185  |            0.44179  |    0.0410169 |
+| 14 | Vomito (Episodios emeticos)                      |              12.0357  |            0.418071 |    0.0388148 |
+| 15 | Hiporexia (Pedida del apetito )                  |              11.0735  |            0.38465  |    0.0357119 |
+| 16 | Nauseas                                          |              10.6955  |            0.371521 |    0.0344929 |
+| 17 | Tos                                              |              10.5918  |            0.367916 |    0.0341582 |
+| 18 | Taquipnea                                        |               8.39216 |            0.29151  |    0.0270645 |
+| 19 | Dolor abdominal                                  |               7.17259 |            0.249147 |    0.0231315 |
++----+--------------------------------------------------+-----------------------+---------------------+--------------+
+`matplotlib` library is required for this function!
+
+ModelMetricsBinomial: drf
+** Reported on test data. **
+
+MSE: 0.2527316163035326
+RMSE: 0.5027241950647816
+LogLoss: 0.705046799694207
+Mean Per-Class Error: 0.30952380952380953
+AUC: 0.5833333333333334
+AUCPR: 0.5323764304517505
+Gini: 0.16666666666666674
+
+Confusion Matrix (Act/Pred) for max f1 @ threshold = 0.4940334796291983: 
+             Invasiva    No invasiva    Error    Rate
+-----------  ----------  -------------  -------  ----------
+Invasiva     8           4              0.3333   (4.0/12.0)
+No invasiva  2           5              0.2857   (2.0/7.0)
+Total        10          9              0.3158   (6.0/19.0)
+
+Maximum Metrics: Maximum metrics at their respective thresholds
+metric                       threshold    value     idx
+---------------------------  -----------  --------  -----
+max f1                       0.494033     0.625     8
+max f2                       0.176162     0.744681  18
+max f0point5                 0.494033     0.581395  8
+max accuracy                 0.829482     0.684211  0
+max precision                0.829482     1         0
+max recall                   0.176162     1         18
+max specificity              0.829482     1         0
+max absolute_mcc             0.494033     0.368035  8
+max min_per_class_accuracy   0.494033     0.666667  8
+max mean_per_class_accuracy  0.494033     0.690476  8
+max tns                      0.829482     12        0
+max fns                      0.829482     6         0
+max fps                      0.360989     12        17
+max tps                      0.176162     7         18
+max tnr                      0.829482     1         0
+max fnr                      0.829482     0.857143  0
+max fpr                      0.360989     1         17
+max tpr                      0.176162     1         18
+
+Gains/Lift Table: Avg response rate: 36,84 %, avg score: 48,55 %
+group    cumulative_data_fraction    lower_threshold    lift     cumulative_lift    response_rate    score     cumulative_response_rate    cumulative_score    capture_rate    cumulative_capture_rate    gain     cumulative_gain    kolmogorov_smirnov
+-------  --------------------------  -----------------  -------  -----------------  ---------------  --------  --------------------------  ------------------  --------------  -------------------------  -------  -----------------  --------------------
+1        0.0526316                   0.793593           2.71429  2.71429            1                0.829482  1                           0.829482            0.142857        0.142857                   171.429  171.429            0.142857
+2        0.0526316                   0.757703           0        2.71429            0                0         1                           0.829482            0               0.142857                   -100     171.429            0.142857
+3        0.0526316                   0.721814           0        2.71429            0                0         1                           0.829482            0               0.142857                   -100     171.429            0.142857
+4        0.0526316                   0.685924           0        2.71429            0                0         1                           0.829482            0               0.142857                   -100     171.429            0.142857
+5        0.0526316                   0.650035           0        2.71429            0                0         1                           0.829482            0               0.142857                   -100     171.429            0.142857
+6        0.105263                    0.593556           0        1.35714            0                0.630096  0.5                         0.729789            0               0.142857                   -100     35.7143            0.0595238
+7        0.157895                    0.551963           2.71429  1.80952            1                0.584421  0.666667                    0.681333            0.142857        0.285714                   171.429  80.9524            0.202381
+8        0.210526                    0.534056           0        1.35714            0                0.538052  0.5                         0.645513            0               0.285714                   -100     35.7143            0.119048
+9        0.315789                    0.522921           1.35714  1.35714            0.5              0.529432  0.5                         0.606819            0.142857        0.428571                   35.7143  35.7143            0.178571
+10       0.421053                    0.503419           1.35714  1.35714            0.5              0.51093   0.5                         0.582847            0.142857        0.571429                   35.7143  35.7143            0.238095
+11       0.526316                    0.49298            1.35714  1.35714            0.5              0.493507  0.5                         0.564979            0.142857        0.714286                   35.7143  35.7143            0.297619
+12       0.578947                    0.4843             0        1.23377            0                0.490316  0.454545                    0.558191            0               0.714286                   -100     23.3766            0.214286
+13       0.684211                    0.441833           0        1.04396            0                0.477779  0.384615                    0.54582             0               0.714286                   -100     4.3956             0.047619
+14       0.789474                    0.403067           0        0.904762           0                0.419328  0.333333                    0.528955            0               0.714286                   -100     -9.52381           -0.119048
+15       0.894737                    0.369386           1.35714  0.957983           0.5              0.376494  0.352941                    0.511018            0.142857        0.857143                   35.7143  -4.20168           -0.0595238
+16       1                           0.176162           1.35714  1                  0.5              0.268575  0.368421                    0.485498            0.142857        1                          35.7143  0                  0
+
+
+H2O session _sid_b9cb closed.
+
+****************
+Modelo 2: Comorbilidades
+****************
+
+Checking whether there is an H2O instance running at http://localhost:54321 ..... not found.
+Attempting to start a local H2O server...
+; Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)
+  Starting server from C:\Users\Natalia\AppData\Local\Programs\Python\Python39\Lib\site-packages\h2o\backend\bin\h2o.jar
+  Ice root: C:\Users\Natalia\AppData\Local\Temp\tmpe3qfb7rt
+  JVM stdout: C:\Users\Natalia\AppData\Local\Temp\tmpe3qfb7rt\h2o_Natalia_started_from_python.out
+  JVM stderr: C:\Users\Natalia\AppData\Local\Temp\tmpe3qfb7rt\h2o_Natalia_started_from_python.err
+  Server is running at http://127.0.0.1:54321
+Connecting to H2O server at http://127.0.0.1:54321 ... successful.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         04 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    19 days
+H2O_cluster_name:           H2O_from_python_Natalia_7kpf5b
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    7.111 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://127.0.0.1:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+Connecting to H2O server at http://localhost:54321 ... successful.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         13 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    19 days
+H2O_cluster_name:           H2O_from_python_Natalia_7kpf5b
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    7.097 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://localhost:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+Parse progress: |████████████████████████████████████████████████████████████████| (done) 100%
+drf Grid Build progress: |███████████████████████████████████████████████████████| (done) 100%
+Model ID with best R2: rf_grid_model_9
+Best AUC: 0.6555690072639225
+drf prediction progress: |███████████████████████████████████████████████████████| (done) 100%
++----+-----------------------------------+-----------------------+---------------------+--------------+
+|    | variable                          |   relative importance |   scaled importance |   percentage |
+|----+-----------------------------------+-----------------------+---------------------+--------------|
+|  0 | Genero                            |              61.3388  |           1         |   0.155031   |
+|  1 | Hipertension                      |              38.3362  |           0.624991  |   0.0968929  |
+|  2 | Diabetes                          |              34.8799  |           0.568644  |   0.0881574  |
+|  3 | Tabaquismo                        |              31.0837  |           0.506754  |   0.0785626  |
+|  4 | Edad                              |              28.9672  |           0.472249  |   0.0732132  |
+|  5 | Ninguno                           |              21.7082  |           0.353906  |   0.0548664  |
+|  6 | Otra enfermedad cardiaca          |              20.2599  |           0.330295  |   0.0512059  |
+|  7 | Enfermedad renal                  |              19.57    |           0.319048  |   0.0494623  |
+|  8 | Obesidad                          |              19.1118  |           0.311577  |   0.0483041  |
+|  9 | Cancer                            |              16.0101  |           0.261012  |   0.0404649  |
+| 10 | otra comorbilidad                 |              15.6423  |           0.255015  |   0.0395353  |
+| 11 | Falla Cardiaca                    |              15.1801  |           0.247479  |   0.0383669  |
+| 12 | EPOC                              |              14.8321  |           0.241806  |   0.0374875  |
+| 13 | Alcoholismo                       |              12.6766  |           0.206665  |   0.0320394  |
+| 14 | Artrosis                          |              10.5758  |           0.172415  |   0.0267297  |
+| 15 | Enfermedad coronaria              |               9.73862 |           0.158768  |   0.0246139  |
+| 16 | Enfermedades reumaticas           |               8.892   |           0.144965  |   0.0224741  |
+| 17 | Artritis reumatoide               |               5.5817  |           0.090998  |   0.0141075  |
+| 18 | Enfermedad hematologica cronica   |               4.1827  |           0.0681902 |   0.0105716  |
+| 19 | Tuberculosis                      |               2.57904 |           0.0420458 |   0.00651841 |
+| 20 | Transtornos neurologicos cronicos |               1.96499 |           0.0320351 |   0.00496642 |
+| 21 | VIH                               |               1.34337 |           0.0219009 |   0.00339531 |
+| 22 | Espondiloartropatias              |               1.20013 |           0.0195656 |   0.00303327 |
++----+-----------------------------------+-----------------------+---------------------+--------------+
+`matplotlib` library is required for this function!
+
+ModelMetricsBinomial: drf
+** Reported on test data. **
+
+MSE: 0.19487015738009378
+RMSE: 0.4414410010183623
+LogLoss: 0.5715130353408051
+Mean Per-Class Error: 0.22619047619047616
+AUC: 0.7619047619047619
+AUCPR: 0.7564063745090511
+Gini: 0.5238095238095237
+
+Confusion Matrix (Act/Pred) for max f1 @ threshold = 0.4985121522955137: 
+             Invasiva    No invasiva    Error    Rate
+-----------  ----------  -------------  -------  ----------
+Invasiva     10          2              0.1667   (2.0/12.0)
+No invasiva  2           5              0.2857   (2.0/7.0)
+Total        12          7              0.2105   (4.0/19.0)
+
+Maximum Metrics: Maximum metrics at their respective thresholds
+metric                       threshold    value     idx
+---------------------------  -----------  --------  -----
+max f1                       0.498512     0.714286  6
+max f2                       0.352118     0.795455  14
+max f0point5                 0.603803     0.789474  2
+max accuracy                 0.603803     0.789474  2
+max precision                0.891153     1         0
+max recall                   0.352118     1         14
+max specificity              0.891153     1         0
+max absolute_mcc             0.603803     0.566947  2
+max min_per_class_accuracy   0.498512     0.714286  6
+max mean_per_class_accuracy  0.498512     0.77381   6
+max tns                      0.891153     12        0
+max fns                      0.891153     6         0
+max fps                      0.167313     12        17
+max tps                      0.352118     7         14
+max tnr                      0.891153     1         0
+max fnr                      0.891153     0.857143  0
+max fpr                      0.167313     1         17
+max tpr                      0.352118     1         14
+
+Gains/Lift Table: Avg response rate: 36,84 %, avg score: 47,56 %
+group    cumulative_data_fraction    lower_threshold    lift     cumulative_lift    response_rate    score     cumulative_response_rate    cumulative_score    capture_rate    cumulative_capture_rate    gain     cumulative_gain    kolmogorov_smirnov
+-------  --------------------------  -----------------  -------  -----------------  ---------------  --------  --------------------------  ------------------  --------------  -------------------------  -------  -----------------  --------------------
+1        0.0526316                   0.851491           2.71429  2.71429            1                0.891153  1                           0.891153            0.142857        0.142857                   171.429  171.429            0.142857
+2        0.0526316                   0.811828           0        2.71429            0                0         1                           0.891153            0               0.142857                   -100     171.429            0.142857
+3        0.0526316                   0.772165           0        2.71429            0                0         1                           0.891153            0               0.142857                   -100     171.429            0.142857
+4        0.0526316                   0.732503           0        2.71429            0                0         1                           0.891153            0               0.142857                   -100     171.429            0.142857
+5        0.0526316                   0.69284            0        2.71429            0                0         1                           0.891153            0               0.142857                   -100     171.429            0.142857
+6        0.105263                    0.617203           2.71429  2.71429            1                0.670805  1                           0.780979            0.142857        0.285714                   171.429  171.429            0.285714
+7        0.157895                    0.598542           2.71429  2.71429            1                0.603803  1                           0.72192             0.142857        0.428571                   171.429  171.429            0.428571
+8        0.210526                    0.589797           0        2.03571            0                0.596287  0.75                        0.690512            0               0.428571                   -100     103.571            0.345238
+9        0.315789                    0.538846           1.35714  1.80952            0.5              0.575603  0.666667                    0.652209            0.142857        0.571429                   35.7143  80.9524            0.404762
+10       0.421053                    0.492676           1.35714  1.69643            0.5              0.495792  0.625                       0.613105            0.142857        0.714286                   35.7143  69.6429            0.464286
+11       0.526316                    0.452428           0        1.35714            0                0.471757  0.5                         0.584835            0               0.714286                   -100     35.7143            0.297619
+12       0.631579                    0.433575           0        1.13095            0                0.433575  0.416667                    0.559625            0               0.714286                   -100     13.0952            0.130952
+13       0.684211                    0.430166           0        1.04396            0                0.431162  0.384615                    0.549744            0               0.714286                   -100     4.3956             0.047619
+14       0.789474                    0.370759           1.35714  1.08571            0.5              0.406344  0.4                         0.530624            0.142857        0.857143                   35.7143  8.57143            0.107143
+15       0.894737                    0.279371           1.35714  1.11765            0.5              0.315921  0.411765                    0.505365            0.142857        1                          35.7143  11.7647            0.166667
+16       1                           0.167313           0        1                  0                0.222636  0.368421                    0.475604            0               1                          -100     0                  0
+
+
+H2O session _sid_8464 closed.
+Checking whether there is an H2O instance running at http://localhost:54321 ..... not found.
+Attempting to start a local H2O server...
+; Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)
+  Starting server from C:\Users\Natalia\AppData\Local\Programs\Python\Python39\Lib\site-packages\h2o\backend\bin\h2o.jar
+  Ice root: C:\Users\Natalia\AppData\Local\Temp\tmp51nqjtca
+  JVM stdout: C:\Users\Natalia\AppData\Local\Temp\tmp51nqjtca\h2o_Natalia_started_from_python.out
+  JVM stderr: C:\Users\Natalia\AppData\Local\Temp\tmp51nqjtca\h2o_Natalia_started_from_python.err
+  Server is running at http://127.0.0.1:54321
+Connecting to H2O server at http://127.0.0.1:54321 ... successful.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         04 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    19 days
+H2O_cluster_name:           H2O_from_python_Natalia_oyhdpk
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    7.111 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://127.0.0.1:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+Connecting to H2O server at http://localhost:54321 ... successful.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         13 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    19 days
+H2O_cluster_name:           H2O_from_python_Natalia_oyhdpk
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    7.098 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://localhost:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+
+****************
+Modelo 3: Sintomas y Comorbilidades
+****************
+
+Parse progress: |████████████████████████████████████████████████████████████████| (done) 100%
+drf Grid Build progress: |███████████████████████████████████████████████████████| (done) 100%
+Model ID with best R2: rf_grid_model_18
+Best AUC: 0.7306295399515738
+drf prediction progress: |███████████████████████████████████████████████████████| (done) 100%
++----+--------------------------------------------------+-----------------------+---------------------+--------------+
+|    | variable                                         |   relative importance |   scaled importance |   percentage |
+|----+--------------------------------------------------+-----------------------+---------------------+--------------|
+|  0 | Dificultad respiratoria si disnea y si taquipnea |             57.2374   |           1         |  0.0640947   |
+|  1 | Genero                                           |             53.1954   |           0.929382  |  0.0595685   |
+|  2 | Ninguno                                          |             45.5351   |           0.795547  |  0.0509903   |
+|  3 | Hipertension                                     |             41.4721   |           0.724562  |  0.0464406   |
+|  4 | Edad                                             |             35.6245   |           0.622399  |  0.0398924   |
+|  5 | Diabetes                                         |             34.8065   |           0.608107  |  0.0389764   |
+|  6 | Diarrea                                          |             33.9058   |           0.592372  |  0.0379679   |
+|  7 | Dolor toracico                                   |             32.5137   |           0.56805   |  0.036409    |
+|  8 | Tabaquismo                                       |             31.3138   |           0.547087  |  0.0350653   |
+|  9 | Hiporexia (Pedida del apetito )                  |             30.2449   |           0.528411  |  0.0338683   |
+| 10 | Obesidad                                         |             28.9432   |           0.505669  |  0.0324107   |
+| 11 | Disnea                                           |             28.5718   |           0.49918   |  0.0319948   |
+| 12 | otro sintoma                                     |             28.4444   |           0.496955  |  0.0318521   |
+| 13 | Fiebre                                           |             27.6017   |           0.482231  |  0.0309085   |
+| 14 | Otra enfermedad cardiaca                         |             26.5857   |           0.464482  |  0.0297708   |
+| 15 | Odinofagia                                       |             24.4107   |           0.426481  |  0.0273352   |
+| 16 | Malestar General                                 |             23.898    |           0.417524  |  0.0267611   |
+| 17 | Cefalea                                          |             23.5907   |           0.412155  |  0.0264169   |
+| 18 | Mialgia                                          |             22.1677   |           0.387294  |  0.0248235   |
+| 19 | otra comorbilidad                                |             21.7126   |           0.379343  |  0.0243139   |
+| 20 | Cancer                                           |             21.2483   |           0.37123   |  0.0237939   |
+| 21 | Enfermedad renal                                 |             20.6213   |           0.360277  |  0.0230918   |
+| 22 | Taquipnea                                        |             19.3766   |           0.33853   |  0.021698    |
+| 23 | Anosmia(Perdida del olfato )                     |             17.9981   |           0.314447  |  0.0201544   |
+| 24 | Nauseas                                          |             17.4842   |           0.305467  |  0.0195788   |
+| 25 | Tos                                              |             16.5675   |           0.289452  |  0.0185523   |
+| 26 | Vomito (Episodios emeticos)                      |             16.5643   |           0.289396  |  0.0185487   |
+| 27 | Alcoholismo                                      |             15.3478   |           0.268142  |  0.0171865   |
+| 28 | Escalofrios                                      |             14.165    |           0.247477  |  0.015862    |
+| 29 | EPOC                                             |             11.9644   |           0.209032  |  0.0133978   |
+| 30 | Dolor abdominal                                  |             10.3177   |           0.180261  |  0.0115538   |
+| 31 | Enfermedades reumaticas                          |              9.61155  |           0.167924  |  0.0107631   |
+| 32 | Falla Cardiaca                                   |              9.03725  |           0.157891  |  0.0101199   |
+| 33 | Enfermedad coronaria                             |              8.45347  |           0.147691  |  0.00946623  |
+| 34 | Artrosis                                         |              8.41861  |           0.147082  |  0.00942719  |
+| 35 | Enfermedad hematologica cronica                  |              8.00101  |           0.139786  |  0.00895956  |
+| 36 | Artritis reumatoide                              |              7.13161  |           0.124597  |  0.00798601  |
+| 37 | Tuberculosis                                     |              4.59405  |           0.080263  |  0.00514443  |
+| 38 | VIH                                              |              2.75161  |           0.0480737 |  0.00308127  |
+| 39 | Transtornos neurologicos cronicos                |              0.79531  |           0.0138949 |  0.000890592 |
+| 40 | Espondiloartropatias                             |              0.788463 |           0.0137753 |  0.000882924 |
++----+--------------------------------------------------+-----------------------+---------------------+--------------+
+`matplotlib` library is required for this function!
+
+ModelMetricsBinomial: drf
+** Reported on test data. **
+
+MSE: 0.21328152989212457
+RMSE: 0.4618241330767856
+LogLoss: 0.6217127647346178
+Mean Per-Class Error: 0.1964285714285714
+AUC: 0.7380952380952381
+AUCPR: 0.5523395268871496
+Gini: 0.4761904761904763
+
+Confusion Matrix (Act/Pred) for max f1 @ threshold = 0.5080198939118595: 
+             Invasiva    No invasiva    Error    Rate
+-----------  ----------  -------------  -------  ----------
+Invasiva     9           3              0.25     (3.0/12.0)
+No invasiva  1           6              0.1429   (1.0/7.0)
+Total        10          9              0.2105   (4.0/19.0)
+
+Maximum Metrics: Maximum metrics at their respective thresholds
+metric                       threshold    value     idx
+---------------------------  -----------  --------  -----
+max f1                       0.50802      0.75      8
+max f2                       0.50802      0.810811  8
+max f0point5                 0.50802      0.697674  8
+max accuracy                 0.50802      0.789474  8
+max precision                0.594764     0.75      3
+max recall                   0.299641     1         17
+max specificity              0.789345     0.916667  0
+max absolute_mcc             0.50802      0.586556  8
+max min_per_class_accuracy   0.50802      0.75      8
+max mean_per_class_accuracy  0.50802      0.803571  8
+max tns                      0.789345     11        0
+max fns                      0.789345     7         0
+max fps                      0.262953     12        18
+max tps                      0.299641     7         17
+max tnr                      0.789345     0.916667  0
+max fnr                      0.789345     1         0
+max fpr                      0.262953     1         18
+max tpr                      0.299641     1         17
+
+Gains/Lift Table: Avg response rate: 36,84 %, avg score: 47,38 %
+group    cumulative_data_fraction    lower_threshold    lift     cumulative_lift    response_rate    score     cumulative_response_rate    cumulative_score    capture_rate    cumulative_capture_rate    gain     cumulative_gain    kolmogorov_smirnov
+-------  --------------------------  -----------------  -------  -----------------  ---------------  --------  --------------------------  ------------------  --------------  -------------------------  -------  -----------------  --------------------
+1        0.0526316                   0.771444           0        0                  0                0.789345  0                           0.789345            0               0                          -100     -100               -0.0833333
+2        0.0526316                   0.753543           0        0                  0                0         0                           0.789345            0               0                          -100     -100               -0.0833333
+3        0.0526316                   0.735643           0        0                  0                0         0                           0.789345            0               0                          -100     -100               -0.0833333
+4        0.0526316                   0.717742           0        0                  0                0         0                           0.789345            0               0                          -100     -100               -0.0833333
+5        0.0526316                   0.699841           0        0                  0                0         0                           0.789345            0               0                          -100     -100               -0.0833333
+6        0.105263                    0.67867            2.71429  1.35714            1                0.689896  0.5                         0.739621            0.142857        0.142857                   171.429  35.7143            0.0595238
+7        0.157895                    0.619094           2.71429  1.80952            1                0.675863  0.666667                    0.718368            0.142857        0.285714                   171.429  80.9524            0.202381
+8        0.210526                    0.556137           2.71429  2.03571            1                0.594764  0.75                        0.687467            0.142857        0.428571                   171.429  103.571            0.345238
+9        0.315789                    0.527008           1.35714  1.80952            0.5              0.529283  0.666667                    0.634739            0.142857        0.571429                   35.7143  80.9524            0.404762
+10       0.421053                    0.50873            1.35714  1.69643            0.5              0.51708   0.625                       0.605324            0.142857        0.714286                   35.7143  69.6429            0.464286
+11       0.526316                    0.496601           1.35714  1.62857            0.5              0.50231   0.6                         0.584721            0.142857        0.857143                   35.7143  62.8571            0.52381
+12       0.578947                    0.469376           0        1.48052            0                0.469625  0.545455                    0.574258            0               0.857143                   -100     48.0519            0.440476
+13       0.684211                    0.35532            0        1.25275            0                0.435101  0.461538                    0.552849            0               0.857143                   -100     25.2747            0.27381
+14       0.789474                    0.314306           0        1.08571            0                0.323215  0.4                         0.522231            0               0.857143                   -100     8.57143            0.107143
+15       0.894737                    0.302528           0        0.957983           0                0.303391  0.352941                    0.496485            0               0.857143                   -100     -4.20168           -0.0595238
+16       1                           0.262953           1.35714  1                  0.5              0.281297  0.368421                    0.473834            0.142857        1                          35.7143  0                  0
+
+
+H2O session _sid_84b1 closed.
+Checking whether there is an H2O instance running at http://localhost:54321 ..... not found.
+Attempting to start a local H2O server...
+; Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)
+  Starting server from C:\Users\Natalia\AppData\Local\Programs\Python\Python39\Lib\site-packages\h2o\backend\bin\h2o.jar
+  Ice root: C:\Users\Natalia\AppData\Local\Temp\tmp0hbxtiba
+  JVM stdout: C:\Users\Natalia\AppData\Local\Temp\tmp0hbxtiba\h2o_Natalia_started_from_python.out
+  JVM stderr: C:\Users\Natalia\AppData\Local\Temp\tmp0hbxtiba\h2o_Natalia_started_from_python.err
+  Server is running at http://127.0.0.1:54321
+Connecting to H2O server at http://127.0.0.1:54321 ... successful.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         04 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    19 days
+H2O_cluster_name:           H2O_from_python_Natalia_h64oj0
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    7.111 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://127.0.0.1:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+Connecting to H2O server at http://localhost:54321 ... successful.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         13 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    19 days
+H2O_cluster_name:           H2O_from_python_Natalia_h64oj0
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    7.097 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://localhost:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+
+****************
+Modelo 4: Signos Vitales
+****************
+
+Parse progress: |████████████████████████████████████████████████████████████████| (done) 100%
+drf Grid Build progress: |███████████████████████████████████████████████████████| (done) 100%
+Model ID with best R2: rf_grid_model_2
+Best AUC: 0.8711489694853043
+drf prediction progress: |███████████████████████████████████████████████████████| (done) 100%
++----+---------------+-----------------------+---------------------+--------------+
+|    | variable      |   relative importance |   scaled importance |   percentage |
+|----+---------------+-----------------------+---------------------+--------------|
+|  0 | FC            |               53185.5 |            1        |     0.174438 |
+|  1 | TEMP          |               46911.8 |            0.88204  |     0.153861 |
+|  2 | TA SISTOLICA  |               46422.5 |            0.87284  |     0.152256 |
+|  3 | TA DIASTOLICA |               41893.5 |            0.787685 |     0.137402 |
+|  4 | TAM           |               41805.2 |            0.786025 |     0.137112 |
+|  5 | OXI           |               38060.2 |            0.715612 |     0.12483  |
+|  6 | FR            |               36618.8 |            0.68851  |     0.120102 |
++----+---------------+-----------------------+---------------------+--------------+
+`matplotlib` library is required for this function!
+
+ModelMetricsBinomial: drf
+** Reported on test data. **
+
+MSE: 0.21194279287522902
+RMSE: 0.46037245016967404
+LogLoss: 0.6133057291276908
+Mean Per-Class Error: 0.3380869287453423
+AUC: 0.7161744691624005
+AUCPR: 0.6352639538831534
+Gini: 0.4323489383248009
+
+Confusion Matrix (Act/Pred) for max f1 @ threshold = 0.2685535474631409: 
+             Invasiva    No invasiva    Error    Rate
+-----------  ----------  -------------  -------  ---------------
+Invasiva     1006        1039           0.5081   (1039.0/2045.0)
+No invasiva  277         1162           0.1925   (277.0/1439.0)
+Total        1283        2201           0.3777   (1316.0/3484.0)
+
+Maximum Metrics: Maximum metrics at their respective thresholds
+metric                       threshold    value     idx
+---------------------------  -----------  --------  -----
+max f1                       0.268554     0.638462  268
+max f2                       0.111417     0.78697   358
+max f0point5                 0.37339      0.598448  208
+max accuracy                 0.492086     0.668197  143
+max precision                0.978605     1         0
+max recall                   0.0236972    1         395
+max specificity              0.978605     1         0
+max absolute_mcc             0.37339      0.321034  208
+max min_per_class_accuracy   0.356771     0.658791  218
+max mean_per_class_accuracy  0.37339      0.661913  208
+max tns                      0.978605     2045      0
+max fns                      0.978605     1438      0
+max fps                      0.00256465   2045      399
+max tps                      0.0236972    1439      395
+max tnr                      0.978605     1         0
+max fnr                      0.978605     0.999305  0
+max fpr                      0.00256465   1         399
+max tpr                      0.0236972    1         395
+
+Gains/Lift Table: Avg response rate: 41,30 %, avg score: 35,66 %
+group    cumulative_data_fraction    lower_threshold    lift      cumulative_lift    response_rate    score      cumulative_response_rate    cumulative_score    capture_rate    cumulative_capture_rate    gain      cumulative_gain    kolmogorov_smirnov
+-------  --------------------------  -----------------  --------  -----------------  ---------------  ---------  --------------------------  ------------------  --------------  -------------------------  --------  -----------------  --------------------
+1        0.0100459                   0.798735           2.2136    2.2136             0.914286         0.853788   0.914286                    0.853788            0.0222377       0.0222377                  121.36    121.36             0.0207707
+2        0.0200918                   0.752054           1.86773   2.04066            0.771429         0.77245    0.842857                    0.813119            0.018763        0.0410007                  86.7726   104.066            0.0356217
+3        0.0301378                   0.722656           2.07525   2.05219            0.857143         0.736111   0.847619                    0.78745             0.0208478       0.0618485                  107.525   105.219            0.0540245
+4        0.0401837                   0.699766           1.79855   1.98878            0.742857         0.710123   0.821429                    0.768118            0.0180681       0.0799166                  79.8551   98.8782            0.0676917
+5        0.0502296                   0.686499           1.59103   1.90923            0.657143         0.692203   0.788571                    0.752935            0.0159833       0.0958999                  59.1026   90.9231            0.077807
+6        0.100172                    0.622146           1.71149   1.81064            0.706897         0.651927   0.747851                    0.702576            0.085476        0.181376                   71.1485   81.0641            0.138344
+7        0.150115                    0.567186           1.628     1.74988            0.672414         0.592818   0.722753                    0.66606             0.0813065       0.262682                   62.7998   74.9877            0.191778
+8        0.200057                    0.531183           1.33579   1.6465             0.551724         0.549222   0.680057                    0.636892            0.066713        0.329395                   33.5794   64.6504            0.220349
+9        0.299943                    0.461718           1.28709   1.52682            0.531609         0.497152   0.630622                    0.590357            0.128562        0.457957                   28.7093   52.6815            0.269204
+10       0.400115                    0.398189           1.17934   1.43982            0.487106         0.428966   0.594692                    0.549951            0.118138        0.576095                   17.9345   43.9823            0.299811
+11       0.5                         0.338789           1.09229   1.3704             0.451149         0.367907   0.566016                    0.513584            0.109104        0.685198                   9.22895   37.0396            0.315516
+12       0.599885                    0.283434           0.932273  1.29745            0.385057         0.311454   0.535885                    0.479928            0.0931202       0.778318                   -6.77274  29.7445            0.303991
+13       0.700057                    0.232819           0.728419  1.21602            0.30086          0.25793    0.502255                    0.448162            0.0729673       0.851286                   -27.1581  21.6023            0.257643
+14       0.799943                    0.175712           0.66094   1.14671            0.272989         0.204681   0.473628                    0.41776             0.0660181       0.917304                   -33.906   14.6712            0.199944
+15       0.899828                    0.11983            0.549623  1.08043            0.227011         0.146361   0.446252                    0.387633            0.0548992       0.972203                   -45.0377  8.04322            0.123303
+16       1                           0.00256465         0.277493  1                  0.114613         0.0780934  0.413031                    0.356626            0.0277971       1                          -72.2507  0                  0
+
+
+H2O session _sid_9113 closed.
+Checking whether there is an H2O instance running at http://localhost:54321 ..... not found.
+Attempting to start a local H2O server...
+; Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)
+  Starting server from C:\Users\Natalia\AppData\Local\Programs\Python\Python39\Lib\site-packages\h2o\backend\bin\h2o.jar
+  Ice root: C:\Users\Natalia\AppData\Local\Temp\tmpo3ph4dd2
+  JVM stdout: C:\Users\Natalia\AppData\Local\Temp\tmpo3ph4dd2\h2o_Natalia_started_from_python.out
+  JVM stderr: C:\Users\Natalia\AppData\Local\Temp\tmpo3ph4dd2\h2o_Natalia_started_from_python.err
+  Server is running at http://127.0.0.1:54321
+Connecting to H2O server at http://127.0.0.1:54321 ... successful.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         05 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    19 days
+H2O_cluster_name:           H2O_from_python_Natalia_knrtgq
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    7.111 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://127.0.0.1:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+Connecting to H2O server at http://localhost:54321 ... successful.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         13 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    19 days
+H2O_cluster_name:           H2O_from_python_Natalia_knrtgq
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    7.097 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://localhost:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+
+****************
+Modelo 5: Paraclinicos
+****************
+
+Parse progress: |████████████████████████████████████████████████████████████████| (done) 100%
+drf Grid Build progress: |███████████████████████████████████████████████████████| (done) 100%
+Model ID with best R2: rf_grid_model_9
+Best AUC: 0.8928821734828496
+drf prediction progress: |███████████████████████████████████████████████████████| (done) 100%
++----+------------+-----------------------+---------------------+--------------+
+|    | variable   |   relative importance |   scaled importance |   percentage |
+|----+------------+-----------------------+---------------------+--------------|
+|  0 | Urea       |             278.183   |           1         |   0.139672   |
+|  1 | Creatinina |             258.411   |           0.928925  |   0.129745   |
+|  2 | Edad       |             218.852   |           0.786721  |   0.109883   |
+|  3 | Linfocitos |             209.841   |           0.754326  |   0.105358   |
+|  4 | Plaquetas  |             193.977   |           0.697299  |   0.0973933  |
+|  5 | D          |             151.532   |           0.544722  |   0.0760826  |
+|  6 | FR         |             150.975   |           0.54272   |   0.0758029  |
+|  7 | FC         |             144.408   |           0.519112  |   0.0725055  |
+|  8 | S          |             115.28    |           0.414405  |   0.0578808  |
+|  9 | FiO2       |             112.774   |           0.405395  |   0.0566224  |
+| 10 | PO2        |             108.719   |           0.390817  |   0.0545863  |
+| 11 | Glasgov    |              44.8511  |           0.161229  |   0.0225192  |
+| 12 | pH         |               3.88049 |           0.0139494 |   0.00194835 |
++----+------------+-----------------------+---------------------+--------------+
+`matplotlib` library is required for this function!
+
+ModelMetricsBinomial: drf
+** Reported on test data. **
+
+MSE: 0.16631614663905386
+RMSE: 0.40781876690394453
+LogLoss: 0.5165555814064232
+Mean Per-Class Error: 0.36883116883116884
+AUC: 0.6409090909090909
+AUCPR: 0.26626077826734096
+Gini: 0.28181818181818175
+
+Confusion Matrix (Act/Pred) for max f1 @ threshold = 0.14968795910092758: 
+             Invasiva    No invasiva    Error    Rate
+-----------  ----------  -------------  -------  -----------
+Invasiva     51          26             0.3377   (26.0/77.0)
+No invasiva  8           12             0.4      (8.0/20.0)
+Total        59          38             0.3505   (34.0/97.0)
+
+Maximum Metrics: Maximum metrics at their respective thresholds
+metric                       threshold    value     idx
+---------------------------  -----------  --------  -----
+max f1                       0.149688     0.413793  29
+max f2                       0.0579653    0.632911  58
+max f0point5                 0.149688     0.348837  29
+max accuracy                 0.463867     0.783505  0
+max precision                0.259847     0.375     7
+max recall                   0.0579653    1         58
+max specificity              0.463867     0.987013  0
+max absolute_mcc             0.0579653    0.251535  58
+max min_per_class_accuracy   0.149688     0.6       29
+max mean_per_class_accuracy  0.149688     0.631169  29
+max tns                      0.463867     76        0
+max fns                      0.463867     20        0
+max fps                      0.0126672    77        73
+max tps                      0.0579653    20        58
+max tnr                      0.463867     0.987013  0
+max fnr                      0.463867     1         0
+max fpr                      0.0126672    1         73
+max tpr                      0.0579653    1         58
+
+Gains/Lift Table: Avg response rate: 20,62 %, avg score: 13,95 %
+group    cumulative_data_fraction    lower_threshold    lift      cumulative_lift    response_rate    score      cumulative_response_rate    cumulative_score    capture_rate    cumulative_capture_rate    gain      cumulative_gain    kolmogorov_smirnov
+-------  --------------------------  -----------------  --------  -----------------  ---------------  ---------  --------------------------  ------------------  --------------  -------------------------  --------  -----------------  --------------------
+1        0.0103093                   0.456861           0         0                  0                0.463867   0                           0.463867            0               0                          -100      -100               -0.012987
+2        0.0206186                   0.437507           0         0                  0                0.456569   0                           0.460218            0               0                          -100      -100               -0.025974
+3        0.0309278                   0.384162           0         0                  0                0.435849   0                           0.452095            0               0                          -100      -100               -0.038961
+4        0.0412371                   0.368991           4.85      1.2125             1                0.377113   0.25                        0.43335             0.05            0.05                       385       21.25              0.011039
+5        0.0515464                   0.351714           0         0.97               0                0.367443   0.2                         0.420168            0               0.05                       -100      -3                 -0.00194805
+6        0.103093                    0.246621           1.94      1.455              0.4              0.280441   0.3                         0.350304            0.1             0.15                       94        45.5               0.0590909
+7        0.154639                    0.227775           0.97      1.29333            0.2              0.231854   0.266667                    0.310821            0.05            0.2                        -3        29.3333            0.0571429
+8        0.216495                    0.221811           1.61667   1.38571            0.333333         0.224941   0.285714                    0.286284            0.1             0.3                        61.6667   38.5714            0.105195
+9        0.298969                    0.168699           1.2125    1.33793            0.25             0.190663   0.275862                    0.259906            0.1             0.4                        21.25     33.7931            0.127273
+10       0.412371                    0.147482           1.76364   1.455              0.363636         0.157098   0.3                         0.231634            0.2             0.6                        76.3636   45.5               0.236364
+11       0.505155                    0.102622           0.538889  1.28673            0.111111         0.122539   0.265306                    0.211596            0.05            0.65                       -46.1111  28.6735            0.182468
+12       0.597938                    0.0947773          1.07778   1.25431            0.222222         0.0997397  0.258621                    0.194239            0.1             0.75                       7.77778   25.431             0.191558
+13       0.701031                    0.0737205          0.97      1.2125             0.2              0.0873632  0.25                        0.178522            0.1             0.85                       -3        21.25              0.187662
+14       0.793814                    0.0583976          1.07778   1.19675            0.222222         0.0641667  0.246753                    0.165156            0.1             0.95                       7.77778   19.6753            0.196753
+15       0.907216                    0.042963           0.440909  1.10227            0.0909091        0.0489689  0.227273                    0.150632            0.05            1                          -55.9091  10.2273            0.116883
+16       1                           0.0126672          0         1                  0                0.0307743  0.206186                    0.139511            0               1                          -100      0                  0
+
+
+Closing connection _sid_b55b at exit
+H2O session _sid_b55b closed.
+
+Process finished with exit code 0

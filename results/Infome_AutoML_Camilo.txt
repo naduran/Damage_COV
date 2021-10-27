@@ -1,0 +1,331 @@
+C:\Users\Natalia\AppData\Local\Programs\Python\Python39\python.exe "D:/Documents/Natalia/Trabajo Andes 2021/Modelos/Repositorio con datos y código/code/autoML.py"
+df 1
+     Unnamed: 0  Paciente  Edad  ...  otra comorbilidad  Ninguno  Ventilacion
+0             0         2     5  ...                  1        0     Invasiva
+1             1         3     0  ...                  0        0     Invasiva
+2             2         6     5  ...                  0        0     Invasiva
+3             3         9     5  ...                  0        4  No invasiva
+4             4        11     0  ...                  1        0  No invasiva
+..          ...       ...   ...  ...                ...      ...          ...
+132         133       355     5  ...                  1        0     Invasiva
+133         134       356     5  ...                  0        0     Invasiva
+134         136       358     5  ...                  0        0     Invasiva
+135         137       359     5  ...                  1        0     Invasiva
+136         138       361     5  ...                  1        0  No invasiva
+
+[137 rows x 55 columns]
+Modelo 1: Sintomas
+Checking whether there is an H2O instance running at http://localhost:54321 ..... not found.
+Attempting to start a local H2O server...
+; Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)
+  Starting server from C:\Users\Natalia\AppData\Local\Programs\Python\Python39\Lib\site-packages\h2o\backend\bin\h2o.jar
+  Ice root: C:\Users\Natalia\AppData\Local\Temp\tmpp49xd66u
+  JVM stdout: C:\Users\Natalia\AppData\Local\Temp\tmpp49xd66u\h2o_Natalia_started_from_python.out
+  JVM stderr: C:\Users\Natalia\AppData\Local\Temp\tmpp49xd66u\h2o_Natalia_started_from_python.err
+  Server is running at http://127.0.0.1:54321
+Connecting to H2O server at http://127.0.0.1:54321 ... successful.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         05 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    11 days
+H2O_cluster_name:           H2O_from_python_Natalia_ofe11z
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    14.22 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://127.0.0.1:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+Connecting to H2O server at http://localhost:54321 ... successful.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         14 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    11 days
+H2O_cluster_name:           H2O_from_python_Natalia_ofe11z
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    14.21 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://localhost:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+demo_clean_select 1
+Parse progress: |████████████████████████████████████████████████████████████████| (done) 100%
+['Paciente', 'Edad', 'Genero', 'Tos', 'Fiebre', 'Odinofagia', 'Dificultad respiratoria si disnea y si taquipnea', 'Taquipenia', 'Malestar General', 'Diarrea', 'Vomito (Episodios emeticos)', 'Hiporexia (Pedida del apetito )', 'Anosmia(Perdida del olfato )', 'Escalofrios', 'Nauseas', 'Dolor toracico', 'Mialgia', 'Cefalea', 'Disnea', 'Ventilacion']
+AutoML progress: |█
+02:25:11.304: AutoML: XGBoost is not available; skipping it.
+02:25:11.350: Step 'best_of_family_xgboost' not defined in provider 'StackedEnsemble': skipping it.
+02:25:11.350: Step 'all_xgboost' not defined in provider 'StackedEnsemble': skipping it.
+02:25:13.700: Skipping training of model GBM_1_AutoML_1_20211019_22511 due to exception: water.exceptions.H2OModelBuilderIllegalArgumentException: Illegal argument(s) for GBM model: GBM_1_AutoML_1_20211019_22511.  Details: ERRR on field: _min_rows: The dataset size is too small to split for min_rows=100.0: must have at least 200.0 (weighted) rows, but have only 114.0.
+
+
+██████████████████████████████████████████████████████████████| (done) 100%
+model_id                                                              auc    logloss     aucpr    mean_per_class_error      rmse       mse
+---------------------------------------------------------------  --------  ---------  --------  ----------------------  --------  --------
+GBM_lr_annealing_selection_AutoML_1_20211019_22511_select_model  0.735081   0.545442  0.511588                0.304159  0.431017  0.185775
+GBM_grid_1_AutoML_1_20211019_22511_model_3                       0.734539   0.537009  0.559744                0.313562  0.425948  0.181432
+GBM_3_AutoML_1_20211019_22511                                    0.722242   0.542219  0.500773                0.318083  0.434465  0.18876
+GBM_4_AutoML_1_20211019_22511                                    0.717902   0.543267  0.516127                0.278481  0.435423  0.189593
+GBM_grid_1_AutoML_1_20211019_22511_model_9                       0.713562   0.53912   0.507795                0.265823  0.432483  0.187041
+GBM_grid_1_AutoML_1_20211019_22511_model_23                      0.707414   0.553205  0.465865                0.315009  0.436491  0.190525
+StackedEnsemble_AllModels_1_AutoML_1_20211019_22511              0.704882   0.552044  0.463134                0.303978  0.438532  0.192311
+GBM_grid_1_AutoML_1_20211019_22511_model_10                      0.701085   0.545373  0.532795                0.338698  0.432748  0.187271
+GBM_grid_1_AutoML_1_20211019_22511_model_22                      0.697288   0.566011  0.492998                0.357685  0.439291  0.192976
+GBM_2_AutoML_1_20211019_22511                                    0.69566    0.566142  0.462829                0.297468  0.444969  0.197997
+
+[10 rows x 7 columns]
+
++----+-----------------------------------------------------------------+----------+-----------+----------+-----------+------------------------+----------+
+|    |                                                                 |    index |   modelid |      auc |   logloss |   mean_per_class_error |     rmse |
+|----+-----------------------------------------------------------------+----------+-----------+----------+-----------+------------------------+----------|
+|  0 | GBM_lr_annealing_selection_AutoML_1_20211019_22511_select_model | 0.735081 |  0.545442 | 0.511588 |  0.304159 |               0.431017 | 0.185775 |
+|  1 | GBM_grid_1_AutoML_1_20211019_22511_model_3                      | 0.734539 |  0.537009 | 0.559744 |  0.313562 |               0.425948 | 0.181432 |
+|  2 | GBM_3_AutoML_1_20211019_22511                                   | 0.722242 |  0.542219 | 0.500773 |  0.318083 |               0.434465 | 0.18876  |
+|  3 | GBM_4_AutoML_1_20211019_22511                                   | 0.717902 |  0.543267 | 0.516127 |  0.278481 |               0.435423 | 0.189593 |
+|  4 | GBM_grid_1_AutoML_1_20211019_22511_model_9                      | 0.713562 |  0.53912  | 0.507795 |  0.265823 |               0.432483 | 0.187041 |
+|  5 | GBM_grid_1_AutoML_1_20211019_22511_model_23                     | 0.707414 |  0.553205 | 0.465865 |  0.315009 |               0.436491 | 0.190525 |
+|  6 | StackedEnsemble_AllModels_1_AutoML_1_20211019_22511             | 0.704882 |  0.552044 | 0.463134 |  0.303978 |               0.438532 | 0.192311 |
+|  7 | GBM_grid_1_AutoML_1_20211019_22511_model_10                     | 0.701085 |  0.545373 | 0.532795 |  0.338698 |               0.432748 | 0.187271 |
+|  8 | GBM_grid_1_AutoML_1_20211019_22511_model_22                     | 0.697288 |  0.566011 | 0.492998 |  0.357685 |               0.439291 | 0.192976 |
+|  9 | GBM_2_AutoML_1_20211019_22511                                   | 0.69566  |  0.566142 | 0.462829 |  0.297468 |               0.444969 | 0.197997 |
++----+-----------------------------------------------------------------+----------+-----------+----------+-----------+------------------------+----------+
+gbm prediction progress: |███████████████████████████████████████████████████████| (done) 100%
+H2O session _sid_9cab closed.
+Modelo 2: Comoribilidades
+Checking whether there is an H2O instance running at http://localhost:54321 ..... not found.
+Attempting to start a local H2O server...
+; Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)
+  Starting server from C:\Users\Natalia\AppData\Local\Programs\Python\Python39\Lib\site-packages\h2o\backend\bin\h2o.jar
+  Ice root: C:\Users\Natalia\AppData\Local\Temp\tmp74nuv03b
+  JVM stdout: C:\Users\Natalia\AppData\Local\Temp\tmp74nuv03b\h2o_Natalia_started_from_python.out
+  JVM stderr: C:\Users\Natalia\AppData\Local\Temp\tmp74nuv03b\h2o_Natalia_started_from_python.err
+  Server is running at http://127.0.0.1:54321
+Connecting to H2O server at http://127.0.0.1:54321 ... successful.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         04 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    11 days
+H2O_cluster_name:           H2O_from_python_Natalia_kjqafb
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    14.22 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://127.0.0.1:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+Connecting to H2O server at http://localhost:54321 ... successful.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         13 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    11 days
+H2O_cluster_name:           H2O_from_python_Natalia_kjqafb
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    14.21 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://localhost:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+Parse progress: |████████████████████████████████████████████████████████████████| (done) 100%
+AutoML progress: |█
+02:30:34.309: AutoML: XGBoost is not available; skipping it.
+02:30:34.464: Step 'best_of_family_xgboost' not defined in provider 'StackedEnsemble': skipping it.
+02:30:34.464: Step 'all_xgboost' not defined in provider 'StackedEnsemble': skipping it.
+02:30:35.690: Skipping training of model GBM_1_AutoML_1_20211019_23034 due to exception: water.exceptions.H2OModelBuilderIllegalArgumentException: Illegal argument(s) for GBM model: GBM_1_AutoML_1_20211019_23034.  Details: ERRR on field: _min_rows: The dataset size is too small to split for min_rows=100.0: must have at least 200.0 (weighted) rows, but have only 114.0.
+
+
+██████████████████████████████████████████████████████████████| (done) 100%
++----+--------------------------------------------------------+----------+-----------+----------+-----------+------------------------+----------+
+|    |                                                        |    index |   modelid |      auc |   logloss |   mean_per_class_error |     rmse |
+|----+--------------------------------------------------------+----------+-----------+----------+-----------+------------------------+----------|
+|  0 | GBM_grid_1_AutoML_1_20211019_23034_model_8             | 0.541591 |  0.726024 | 0.313672 |  0.411754 |               0.501019 | 0.251021 |
+|  1 | GBM_grid_1_AutoML_1_20211019_23034_model_1             | 0.529837 |  0.624136 | 0.324143 |  0.5      |               0.463832 | 0.215141 |
+|  2 | DeepLearning_1_AutoML_1_20211019_23034                 | 0.526221 |  0.751435 | 0.33457  |  0.468354 |               0.496356 | 0.246369 |
+|  3 | GBM_grid_1_AutoML_1_20211019_23034_model_3             | 0.519168 |  0.622822 | 0.315766 |  0.5      |               0.463646 | 0.214968 |
+|  4 | GBM_grid_1_AutoML_1_20211019_23034_model_17            | 0.51736  |  0.678781 | 0.309533 |  0.443219 |               0.484457 | 0.234698 |
+|  5 | GBM_grid_1_AutoML_1_20211019_23034_model_13            | 0.512116 |  0.728296 | 0.296962 |  0.5      |               0.503729 | 0.253743 |
+|  6 | GBM_4_AutoML_1_20211019_23034                          | 0.506148 |  0.655838 | 0.297816 |  0.5      |               0.476022 | 0.226597 |
+|  7 | GBM_3_AutoML_1_20211019_23034                          | 0.50434  |  0.648098 | 0.29925  |  0.5      |               0.474069 | 0.224741 |
+|  8 | XRT_1_AutoML_1_20211019_23034                          | 0.500542 |  0.673483 | 0.314861 |  0.5      |               0.483841 | 0.234102 |
+|  9 | GBM_grid_1_AutoML_1_20211019_23034_model_9             | 0.500542 |  0.630563 | 0.30208  |  0.5      |               0.46683  | 0.21793  |
+| 10 | GBM_grid_1_AutoML_1_20211019_23034_model_5             | 0.496203 |  0.648882 | 0.30234  |  0.5      |               0.474416 | 0.225071 |
+| 11 | DRF_1_AutoML_1_20211019_23034                          | 0.494213 |  0.746542 | 0.280529 |  0.441591 |               0.504731 | 0.254753 |
+| 12 | GBM_2_AutoML_1_20211019_23034                          | 0.49132  |  0.653395 | 0.298377 |  0.5      |               0.475509 | 0.226109 |
+| 13 | GBM_grid_1_AutoML_1_20211019_23034_model_15            | 0.490597 |  0.634399 | 0.292149 |  0.484268 |               0.469771 | 0.220685 |
+| 14 | GBM_5_AutoML_1_20211019_23034                          | 0.48481  |  0.736741 | 0.281569 |  0.435443 |               0.504459 | 0.254479 |
+| 15 | GBM_grid_1_AutoML_1_20211019_23034_model_7             | 0.483183 |  0.639332 | 0.305076 |  0.5      |               0.47113  | 0.221964 |
+| 16 | GBM_grid_1_AutoML_1_20211019_23034_model_18            | 0.482278 |  0.67999  | 0.31311  |  0.5      |               0.483927 | 0.234186 |
+| 17 | DeepLearning_grid_2_AutoML_1_20211019_23034_model_3    | 0.478843 |  1.60418  | 0.287887 |  0.5      |               0.577397 | 0.333387 |
+| 18 | GBM_grid_1_AutoML_1_20211019_23034_model_12            | 0.468897 |  0.703634 | 0.282242 |  0.474684 |               0.495788 | 0.245805 |
+| 19 | GBM_grid_1_AutoML_1_20211019_23034_model_10            | 0.464014 |  0.637487 | 0.281176 |  0.5      |               0.470425 | 0.221299 |
+| 20 | DeepLearning_grid_2_AutoML_1_20211019_23034_model_4    | 0.463291 |  1.50352  | 0.293936 |  0.487342 |               0.581877 | 0.338581 |
+| 21 | GBM_grid_1_AutoML_1_20211019_23034_model_2             | 0.461844 |  0.687566 | 0.297014 |  0.468354 |               0.489438 | 0.23955  |
+| 22 | GLM_1_AutoML_1_20211019_23034                          | 0.460036 |  0.620904 | 0.292554 |  0.5      |               0.463159 | 0.214517 |
+| 23 | DeepLearning_grid_3_AutoML_1_20211019_23034_model_4    | 0.459313 |  1.73752  | 0.319329 |  0.474684 |               0.64251  | 0.412819 |
+| 24 | DeepLearning_grid_1_AutoML_1_20211019_23034_model_5    | 0.456058 |  1.35629  | 0.282163 |  0.48264  |               0.60919  | 0.371113 |
+| 25 | DeepLearning_grid_1_AutoML_1_20211019_23034_model_4    | 0.450995 |  2.13799  | 0.292953 |  0.493671 |               0.59968  | 0.359616 |
+| 26 | DeepLearning_grid_1_AutoML_1_20211019_23034_model_1    | 0.431826 |  2.93455  | 0.27324  |  0.5      |               0.584295 | 0.341401 |
+| 27 | StackedEnsemble_AllModels_3_AutoML_1_20211019_23034    | 0.430741 |  0.621832 | 0.271648 |  0.5      |               0.463593 | 0.214918 |
+| 28 | GBM_grid_1_AutoML_1_20211019_23034_model_4             | 0.426763 |  0.628612 | 0.254813 |  0.48264  |               0.46685  | 0.217949 |
+| 29 | DeepLearning_grid_3_AutoML_1_20211019_23034_model_1    | 0.42604  |  1.66971  | 0.260387 |  0.5      |               0.607815 | 0.369439 |
+| 30 | StackedEnsemble_BestOfFamily_2_AutoML_1_20211019_23034 | 0.420615 |  0.64603  | 0.254797 |  0.493671 |               0.475259 | 0.225871 |
+| 31 | DeepLearning_grid_1_AutoML_1_20211019_23034_model_3    | 0.413743 |  4.37019  | 0.257222 |  0.493671 |               0.622289 | 0.387243 |
+| 32 | GBM_grid_1_AutoML_1_20211019_23034_model_11            | 0.41085  |  0.625106 | 0.251068 |  0.5      |               0.46514  | 0.216355 |
+| 33 | DeepLearning_grid_1_AutoML_1_20211019_23034_model_2    | 0.410127 |  4.4562   | 0.256252 |  0.481013 |               0.594103 | 0.352959 |
+| 34 | GBM_grid_1_AutoML_1_20211019_23034_model_20            | 0.409765 |  0.628333 | 0.250614 |  0.5      |               0.466689 | 0.217798 |
+| 35 | DeepLearning_grid_2_AutoML_1_20211019_23034_model_2    | 0.408318 |  2.1357   | 0.254432 |  0.493671 |               0.574618 | 0.330186 |
+| 36 | StackedEnsemble_AllModels_2_AutoML_1_20211019_23034    | 0.400181 |  0.634441 | 0.26087  |  0.5      |               0.469427 | 0.220362 |
+| 37 | DeepLearning_grid_3_AutoML_1_20211019_23034_model_3    | 0.39349  |  1.64144  | 0.254388 |  0.493671 |               0.579335 | 0.335629 |
+| 38 | DeepLearning_grid_3_AutoML_1_20211019_23034_model_2    | 0.393128 |  1.47645  | 0.249815 |  0.5      |               0.554607 | 0.307589 |
+| 39 | DeepLearning_grid_2_AutoML_1_20211019_23034_model_1    | 0.389873 |  1.86289  | 0.24386  |  0.5      |               0.645694 | 0.416921 |
+| 40 | StackedEnsemble_BestOfFamily_3_AutoML_1_20211019_23034 | 0.388788 |  0.651923 | 0.247925 |  0.493671 |               0.477832 | 0.228323 |
+| 41 | StackedEnsemble_AllModels_4_AutoML_1_20211019_23034    | 0.35642  |  0.631084 | 0.238875 |  0.5      |               0.467774 | 0.218813 |
+| 42 | StackedEnsemble_BestOfFamily_1_AutoML_1_20211019_23034 | 0.34991  |  0.632797 | 0.231919 |  0.5      |               0.468665 | 0.219647 |
+| 43 | StackedEnsemble_AllModels_1_AutoML_1_20211019_23034    | 0.348825 |  0.638627 | 0.226996 |  0.5      |               0.471076 | 0.221912 |
++----+--------------------------------------------------------+----------+-----------+----------+-----------+------------------------+----------+
+gbm prediction progress: |███████████████████████████████████████████████████████| (done) 100%
+Modelo 3: Sintomas + Comoribilidades
+Checking whether there is an H2O instance running at http://localhost:54321 . connected.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         5 mins 00 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    11 days
+H2O_cluster_name:           H2O_from_python_Natalia_kjqafb
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    14.19 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://localhost:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+Connecting to H2O server at http://localhost:54321 ... successful.
+--------------------------  ---------------------------------------------------------
+H2O_cluster_uptime:         5 mins 10 secs
+H2O_cluster_timezone:       America/Bogota
+H2O_data_parsing_timezone:  UTC
+H2O_cluster_version:        3.34.0.3
+H2O_cluster_version_age:    11 days
+H2O_cluster_name:           H2O_from_python_Natalia_kjqafb
+H2O_cluster_total_nodes:    1
+H2O_cluster_free_memory:    14.19 Gb
+H2O_cluster_total_cores:    4
+H2O_cluster_allowed_cores:  4
+H2O_cluster_status:         locked, healthy
+H2O_connection_url:         http://localhost:54321
+H2O_connection_proxy:       {"http": null, "https": null}
+H2O_internal_security:      False
+H2O_API_Extensions:         Amazon S3, Algos, AutoML, Core V3, TargetEncoder, Core V4
+Python_version:             3.9.7 final
+--------------------------  ---------------------------------------------------------
+Parse progress: |████████████████████████████████████████████████████████████████| (done) 100%
+AutoML progress: |█
+02:35:30.959: AutoML: XGBoost is not available; skipping it.
+02:35:30.959: Step 'best_of_family_xgboost' not defined in provider 'StackedEnsemble': skipping it.
+02:35:30.959: Step 'all_xgboost' not defined in provider 'StackedEnsemble': skipping it.
+02:35:31.979: Skipping training of model GBM_1_AutoML_2_20211019_23530 due to exception: water.exceptions.H2OModelBuilderIllegalArgumentException: Illegal argument(s) for GBM model: GBM_1_AutoML_2_20211019_23530.  Details: ERRR on field: _min_rows: The dataset size is too small to split for min_rows=100.0: must have at least 200.0 (weighted) rows, but have only 114.0.
+
+
+██████████████████████████████████████████████████████████████| (done) 100%
+Failed polling AutoML progress log: [WinError 32] El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso: 'C:\\Users\\Natalia\\AppData\\Local\\Temp\\tmpaxeu1nog.csv'
++----+-----------------------------------------------------------------+----------+-----------+----------+-----------+------------------------+----------+
+|    |                                                                 |    index |   modelid |      auc |   logloss |   mean_per_class_error |     rmse |
+|----+-----------------------------------------------------------------+----------+-----------+----------+-----------+------------------------+----------|
+|  0 | GBM_lr_annealing_selection_AutoML_2_20211019_23530_select_model | 0.620976 |  0.601753 | 0.345923 |  0.362387 |               0.458344 | 0.210079 |
+|  1 | GBM_grid_1_AutoML_2_20211019_23530_model_10                     | 0.617722 |  0.60248  | 0.342213 |  0.368716 |               0.458722 | 0.210426 |
+|  2 | GBM_4_AutoML_2_20211019_23530                                   | 0.614828 |  0.602843 | 0.346475 |  0.375045 |               0.459999 | 0.211599 |
+|  3 | GBM_grid_1_AutoML_2_20211019_23530_model_1                      | 0.614467 |  0.59986  | 0.35702  |  0.368716 |               0.455632 | 0.207601 |
+|  4 | GBM_grid_1_AutoML_2_20211019_23530_model_12                     | 0.609765 |  0.677172 | 0.351015 |  0.40217  |               0.483881 | 0.234141 |
+|  5 | DeepLearning_1_AutoML_2_20211019_23530                          | 0.609403 |  0.799321 | 0.3833   |  0.389512 |               0.501538 | 0.25154  |
+|  6 | GBM_grid_1_AutoML_2_20211019_23530_model_7                      | 0.606872 |  0.608874 | 0.351838 |  0.365642 |               0.46043  | 0.211996 |
+|  7 | GBM_grid_1_AutoML_2_20211019_23530_model_21                     | 0.602532 |  0.672196 | 0.382146 |  0.381917 |               0.475987 | 0.226564 |
+|  8 | GBM_grid_1_AutoML_2_20211019_23530_model_8                      | 0.594213 |  0.688955 | 0.348102 |  0.420976 |               0.486875 | 0.237047 |
+|  9 | GBM_grid_1_AutoML_2_20211019_23530_model_3                      | 0.593671 |  0.608255 | 0.345536 |  0.3783   |               0.459021 | 0.2107   |
+| 10 | GBM_grid_1_AutoML_2_20211019_23530_model_5                      | 0.593128 |  0.605805 | 0.337965 |  0.368716 |               0.461031 | 0.21255  |
+| 11 | StackedEnsemble_AllModels_2_AutoML_2_20211019_23530             | 0.590235 |  0.608099 | 0.342133 |  0.416275 |               0.458247 | 0.209991 |
+| 12 | StackedEnsemble_BestOfFamily_2_AutoML_2_20211019_23530          | 0.58915  |  0.608546 | 0.341822 |  0.372152 |               0.459617 | 0.211248 |
+| 13 | StackedEnsemble_AllModels_1_AutoML_2_20211019_23530             | 0.588065 |  0.605837 | 0.330577 |  0.381555 |               0.458659 | 0.210368 |
+| 14 | GBM_3_AutoML_2_20211019_23530                                   | 0.576311 |  0.62161  | 0.321757 |  0.39566  |               0.466955 | 0.218047 |
+| 15 | GBM_grid_1_AutoML_2_20211019_23530_model_15                     | 0.573237 |  0.635481 | 0.344936 |  0.436709 |               0.470681 | 0.221541 |
+| 16 | DRF_1_AutoML_2_20211019_23530                                   | 0.572694 |  0.649733 | 0.325242 |  0.43038  |               0.47868  | 0.229135 |
+| 17 | GBM_2_AutoML_2_20211019_23530                                   | 0.56528  |  0.628019 | 0.308291 |  0.362387 |               0.471666 | 0.222469 |
+| 18 | StackedEnsemble_BestOfFamily_1_AutoML_2_20211019_23530          | 0.563834 |  0.613805 | 0.305797 |  0.356239 |               0.462824 | 0.214206 |
+| 19 | GBM_grid_1_AutoML_2_20211019_23530_model_2                      | 0.554792 |  0.679659 | 0.324064 |  0.427306 |               0.487075 | 0.237243 |
+| 20 | GBM_5_AutoML_2_20211019_23530                                   | 0.551899 |  0.725867 | 0.322524 |  0.449367 |               0.500415 | 0.250415 |
+| 21 | GBM_grid_1_AutoML_2_20211019_23530_model_4                      | 0.549005 |  0.621221 | 0.311613 |  0.397649 |               0.464043 | 0.215336 |
+| 22 | GBM_grid_1_AutoML_2_20211019_23530_model_18                     | 0.545389 |  0.692771 | 0.31382  |  0.39566  |               0.489974 | 0.240074 |
+| 23 | StackedEnsemble_BestOfFamily_3_AutoML_2_20211019_23530          | 0.54141  |  0.637245 | 0.309953 |  0.411754 |               0.472176 | 0.222951 |
+| 24 | GBM_grid_1_AutoML_2_20211019_23530_model_17                     | 0.537071 |  0.698689 | 0.303811 |  0.425678 |               0.497086 | 0.247095 |
+| 25 | GBM_grid_1_AutoML_2_20211019_23530_model_13                     | 0.535262 |  0.748796 | 0.317698 |  0.468354 |               0.501416 | 0.251418 |
+| 26 | DeepLearning_grid_1_AutoML_2_20211019_23530_model_3             | 0.522785 |  2.44819  | 0.313069 |  0.481013 |               0.583691 | 0.340696 |
+| 27 | GBM_grid_1_AutoML_2_20211019_23530_model_20                     | 0.520976 |  0.622001 | 0.297287 |  0.474684 |               0.464211 | 0.215491 |
+| 28 | GBM_grid_1_AutoML_2_20211019_23530_model_22                     | 0.520072 |  0.625598 | 0.30046  |  0.420976 |               0.466618 | 0.217732 |
+| 29 | DeepLearning_grid_1_AutoML_2_20211019_23530_model_7             | 0.511392 |  1.12513  | 0.33677  |  0.487342 |               0.551034 | 0.303639 |
+| 30 | DeepLearning_grid_2_AutoML_2_20211019_23530_model_4             | 0.508137 |  1.73433  | 0.294176 |  0.415009 |               0.602985 | 0.363591 |
+| 31 | DeepLearning_grid_1_AutoML_2_20211019_23530_model_1             | 0.506329 |  1.45648  | 0.289696 |  0.433816 |               0.587789 | 0.345496 |
+| 32 | XRT_1_AutoML_2_20211019_23530                                   | 0.502351 |  0.649151 | 0.35173  |  0.5      |               0.474328 | 0.224987 |
+| 33 | DeepLearning_grid_1_AutoML_2_20211019_23530_model_2             | 0.500181 |  1.41548  | 0.303861 |  0.493671 |               0.567987 | 0.322609 |
+| 34 | DeepLearning_grid_3_AutoML_2_20211019_23530_model_4             | 0.498011 |  1.92272  | 0.290337 |  0.438698 |               0.61742  | 0.381208 |
+| 35 | GBM_grid_1_AutoML_2_20211019_23530_model_11                     | 0.492224 |  0.621715 | 0.287623 |  0.457324 |               0.463709 | 0.215026 |
+| 36 | DeepLearning_grid_3_AutoML_2_20211019_23530_model_2             | 0.487523 |  2.41438  | 0.296612 |  0.493671 |               0.574003 | 0.329479 |
+| 37 | DeepLearning_grid_2_AutoML_2_20211019_23530_model_2             | 0.486438 |  2.90075  | 0.312654 |  0.493671 |               0.580384 | 0.336845 |
+| 38 | DeepLearning_grid_3_AutoML_2_20211019_23530_model_1             | 0.479928 |  2.10061  | 0.312859 |  0.493671 |               0.599595 | 0.359514 |
+| 39 | DeepLearning_grid_2_AutoML_2_20211019_23530_model_1             | 0.470886 |  2.2658   | 0.293975 |  0.493671 |               0.593644 | 0.352413 |
+| 40 | DeepLearning_grid_1_AutoML_2_20211019_23530_model_4             | 0.467631 |  2.69962  | 0.306412 |  0.455696 |               0.613226 | 0.376046 |
+| 41 | DeepLearning_grid_3_AutoML_2_20211019_23530_model_3             | 0.466546 |  2.3372   | 0.281721 |  0.493671 |               0.597997 | 0.3576   |
+| 42 | DeepLearning_grid_2_AutoML_2_20211019_23530_model_3             | 0.466184 |  2.58296  | 0.290357 |  0.493671 |               0.582521 | 0.33933  |
+| 43 | GLM_1_AutoML_2_20211019_23530                                   | 0.458228 |  0.620906 | 0.289299 |  0.5      |               0.463163 | 0.21452  |
+| 44 | DeepLearning_grid_1_AutoML_2_20211019_23530_model_5             | 0.446293 |  4.77855  | 0.283295 |  0.488969 |               0.598799 | 0.35856  |
+| 45 | DeepLearning_grid_1_AutoML_2_20211019_23530_model_6             | 0.445208 |  3.08039  | 0.281694 |  0.493671 |               0.586998 | 0.344567 |
+| 46 | DeepLearning_grid_1_AutoML_2_20211019_23530_model_8             | 0.444485 |  1.52666  | 0.260044 |  0.462025 |               0.583778 | 0.340797 |
+| 47 | StackedEnsemble_AllModels_3_AutoML_2_20211019_23530             | 0.432911 |  0.627376 | 0.271334 |  0.493671 |               0.46619  | 0.217333 |
+| 48 | StackedEnsemble_AllModels_4_AutoML_2_20211019_23530             | 0.42604  |  0.637231 | 0.262836 |  0.5      |               0.469904 | 0.22081  |
++----+-----------------------------------------------------------------+----------+-----------+----------+-----------+------------------------+----------+
+gbm prediction progress: |███████████████████████████████████████████████████████| (done) 100%
+Modelo 5: Paraclinicos
+Parse progress: |████████████████████████████████████████████████████████████████| (done) 100%
+Closing connection _sid_b02d at exit
+Traceback (most recent call last):
+  File "D:\Documents\Natalia\Trabajo Andes 2021\Modelos\Repositorio con datos y código\code\autoML.py", line 166, in <module>
+    df_m = h2o.H2OFrame(df_m)
+  File "C:\Users\Natalia\AppData\Local\Programs\Python\Python39\lib\site-packages\h2o\frame.py", line 109, in __init__
+    self._upload_python_object(python_obj, destination_frame, header, separator,
+  File "C:\Users\Natalia\AppData\Local\Programs\Python\Python39\lib\site-packages\h2o\frame.py", line 152, in _upload_python_object
+    os.remove(tmp_path)  # delete the tmp file
+PermissionError: [WinError 32] El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso: 'C:\\Users\\Natalia\\AppData\\Local\\Temp\\tmp9euv9lfk.csv'
+H2O session _sid_b02d closed.
+Closing connection _sid_b5c9 at exit
+H2O session _sid_b5c9 closed.
+Closing connection _sid_93aa at exit
+H2O session _sid_93aa closed.
+
+Process finished with exit code 1

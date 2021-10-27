@@ -7,8 +7,10 @@ Created on Tue Aug 24 00:43:11 2021
 
 import pandas as pd
 import numpy as np
+import os
 
-path = "C:\\Users\\User\\Desktop\\Modelo UniAndes"
+os.chdir("..")
+path = os.path.abspath(os.getcwd())
 
 df = pd.read_excel(path + '\\output\\demo_clean.xlsx')
 
@@ -20,6 +22,7 @@ pc = pc.drop(pc.columns[[15]], axis = 1)
 
 # select 'paciente' and 'ventilacion' columns to match each patient in 'paraclinicos' data
 dfsub = df.iloc[:,np.r_[1:2,54:55],]
+
 
 # remove white spaces
 pc.columns = pc.columns.str.strip()
@@ -142,5 +145,6 @@ pc2sub = pc2sub[pc2sub['Ventilacion'].notna()]
 
 # verify only two classes
 pc2sub['Ventilacion'].unique()
+
 
 pc2sub.to_excel(path + "\\output\\paraclinicos_clean.xlsx", sheet_name='sheet1')
